@@ -60,8 +60,6 @@ def encode_frame(frame_dir, text_to_hide, caesarn):
             print("Source frame must be in RGB format")
             return False
 
-        # use copy of the file
-
         encoded = frame.copy()
         width, height = frame.size
 
@@ -110,8 +108,6 @@ def decode_frame(frame_dir, caesarn):
                     msg += encode_ascii(chr(r), "dec", caesarn)
                 index += 1
 
-    # remove the first and the last quote
-    # print(msg.unicode_escape())
     msg = msg[1:-1]
     recovered_txt = open("/example_files/recovered-text.txt", "w")
     recovered_txt.write(str(msg))
