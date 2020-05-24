@@ -1,9 +1,10 @@
 from pyfiglet import Figlet
-from subprocess import call,STDOUT
+from subprocess import call, STDOUT
 import os
 import video_steganography
 
-if __name__ == '__main__':
+
+def main():
     f = Figlet(font='slant')
     print(f.renderText("VideoSteganagraphy"))
     print("")
@@ -89,3 +90,7 @@ if __name__ == '__main__':
 
     else:
         exit()
+
+
+if __name__ == '__main__':
+    main()

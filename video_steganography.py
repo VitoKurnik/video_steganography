@@ -3,6 +3,7 @@ import shutil
 import cv2
 import os
 
+
 def remove(path):
     if os.path.isFile(path):
         os.remove(path)
@@ -10,6 +11,7 @@ def remove(path):
         shutil.rmtree(path)
     else:
         raise ValueError("file {} is not a file or a directory".format(path))
+
 
 def extract_frame(video):
     temp_folder = 'temp'
@@ -27,6 +29,7 @@ def extract_frame(video):
             break
         cv2.imwrite(os.path.join(temp_folder, "{:d}.png".format(count)), image)
         count += 1
+
 
 def split2len(s, n):
     def _f(s, n):
@@ -86,6 +89,7 @@ def encode_frame(frame_dir, text_to_hide, caesarn):
                 index += 1
         if encoded:
             encoded.save(str(frame_dir) + "/" + str(chopped_text_index + 1) + ".png", compress_level=0)
+
 
 def decode_frame(frame_dir, caesarn):
     first_frame = Image.open(str(frame_dir) + "/" + "1.png")
